@@ -34,10 +34,10 @@ def Bbc():
 app.route('/')
 def index():
     return render_template('index.html')
-@app.route('/ansa')
-def Ansanews():
+@app.route('/ars')
+def Arsnews():
     newsapi = NewsApiClient(api_key="40d18f3377d342d4a16854c146595ff9")
-    topheadlines = newsapi.get_top_headlines(sources="ansa")
+    topheadlines = newsapi.get_top_headlines(sources="ars-technica")
 
     articles = topheadlines['articles']
 
@@ -59,6 +59,7 @@ def Ansanews():
     mylist = zip(news, desc, img,date,urls)
 
     return render_template('ansa.html', context = mylist)
+    
 
 if __name__ == "__main__":
     app.run(debug = True)
