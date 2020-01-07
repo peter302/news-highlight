@@ -59,7 +59,33 @@ def Arsnews():
     mylist = zip(news, desc, img,date,urls)
 
     return render_template('ansa.html', context = mylist)
-    
+
+@app.route('/axio')
+def Arsnews():
+    newsapi = NewsApiClient(api_key="40d18f3377d342d4a16854c146595ff9")
+    topheadlines = newsapi.get_top_headlines(sources="axios")
+
+    articles = topheadlines['articles']
+
+    news = []
+    desc = []
+    img = []
+    date=[]
+    urls=[]
+
+    for i in range(len(articles)):
+        myarticles = articles[i]
+
+        news.append(myarticles['title'])
+        desc.append(myarticles['description'])
+        img.append(myarticles['urlToImage'])
+        date.append(myarticles['publishedAt'])
+        urls.append(myarticles['url'])
+
+    mylist = zip(news, desc, img,date,urls)
+
+    return render_template('axio.html', context = mylist)
+
 
 if __name__ == "__main__":
     app.run(debug = True)
