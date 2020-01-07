@@ -26,3 +26,5 @@ def Bbc():
     mylist = zip(news, desc, img)
 
     return render_template('bbc.html', context = mylist)
+if __name__ == "__main__":
+    app.run(debug = True)
