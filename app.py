@@ -61,7 +61,7 @@ def Arsnews():
     return render_template('ansa.html', context = mylist)
 
 @app.route('/axio')
-def Arsnews():
+def Axio():
     newsapi = NewsApiClient(api_key="40d18f3377d342d4a16854c146595ff9")
     topheadlines = newsapi.get_top_headlines(sources="axios")
 
@@ -84,8 +84,8 @@ def Arsnews():
 
     mylist = zip(news, desc, img,date,urls)
 
-    return render_template('axio.html', context = mylist)
-
+    return render_template('aljazeera.html', context = mylist)
+    
 
 if __name__ == "__main__":
     app.run(debug = True)
