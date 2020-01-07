@@ -30,6 +30,9 @@ Read an entire article Click an article Redirected to the news source's site to 
 
 
 Prerequisites
+
+
+
 You need the following to start working on the project on your local computer:
 A computer running on either Windows, MacOS or Ubuntu operating system installed with the following:
 
